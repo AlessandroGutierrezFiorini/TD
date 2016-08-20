@@ -20,23 +20,18 @@ public class UsuarioController {
 	@RequestMapping(value = "/mostrar",method = RequestMethod.GET) 
 	public String showUsuario(Model model) {
 		model.addAttribute("formUsuario",new Usuario());
-		
 		return "/usuario/cargarUsuario";
 	}
 	
-	@RequestMapping(value = "/save",method = RequestMethod.POST) 
+	@RequestMapping(value = "/guardar",method = RequestMethod.POST) 
 	public String showUsuario(Model model,@ModelAttribute("formUsuario") Usuario usuario) {
-		
 		usuarioService.saveOrUpdate(usuario);
-		
 		return "redirect:/usuario/mostrar";
 	}
 	
 	@RequestMapping(value = "/listar",method = RequestMethod.GET) 
 	public String showUsuarioList(Model model) {
-		
 		model.addAttribute("usuarios",usuarioService.ListAll());
-		
 		return "/usuario/listarUsuario";
 	}
 	
