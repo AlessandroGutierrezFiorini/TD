@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -20,24 +21,24 @@ public class UsuarioController {
 	@RequestMapping(value = "/mostrar",method = RequestMethod.GET) 
 	public String showUsuario(Model model) {
 		model.addAttribute("formUsuario",new Usuario());
-		
 		return "/usuario/cargarUsuario";
 	}
 	
-	@RequestMapping(value = "/save",method = RequestMethod.POST) 
+	@RequestMapping(value = "/guardar",method = RequestMethod.POST) 
 	public String showUsuario(Model model,@ModelAttribute("formUsuario") Usuario usuario) {
-		
 		usuarioService.saveOrUpdate(usuario);
-		
 		return "redirect:/usuario/mostrar";
 	}
 	
 	@RequestMapping(value = "/listar",method = RequestMethod.GET) 
 	public String showUsuarioList(Model model) {
-		
 		model.addAttribute("usuarios",usuarioService.ListAll());
-		
 		return "/usuario/listarUsuario";
 	}
-	
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+	public String deleteUsuario(Model model,@PathVariable("id") int id){
+		Usuario usuario = usuarioService.findById(id);
+		usuarioService.delete(usuario);
+		return "redirect:/usuario/mostrar";
+	}
 }

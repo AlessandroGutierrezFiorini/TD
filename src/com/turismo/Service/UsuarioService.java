@@ -24,7 +24,7 @@ public class UsuarioService {
 	}
 	
 	public void delete(Usuario usuario){
-		
+		usuarioDao.delete(usuario);
 	}
 	
 	public List<Usuario> ListAll(){
@@ -34,7 +34,7 @@ public class UsuarioService {
 	
 	public Usuario findById(int id){
 		
-		return null;
+		return usuarioDao.findById(id);
 	}
 	
 	public void disableUsuario(int id){}

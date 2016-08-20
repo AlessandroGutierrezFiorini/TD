@@ -15,7 +15,7 @@
 <body>
 
 	
-<form:form action="${pageContext.request.contextPath}/usuario/save" method="POST" class="container" commandName="formUsuario">
+<form:form action="${pageContext.request.contextPath}/usuario/guardar" method="POST" class="container" commandName="formUsuario">
 
 		<fieldset>
 
