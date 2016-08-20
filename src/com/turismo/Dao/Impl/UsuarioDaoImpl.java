@@ -34,13 +34,13 @@ public class UsuarioDaoImpl implements UsuarioDAO{
 
 	@Override
 	public void update(Usuario usuario) {
-		// TODO Auto-generated method stub
+		getSession().delete(usuario);
 		
 	}
 
 	@Override
 	public void delete(Usuario usuario) {
-		// TODO Auto-generated method stub
+		getSession().delete(usuario);
 		
 	}
 
@@ -53,8 +53,9 @@ public class UsuarioDaoImpl implements UsuarioDAO{
 
 	@Override
 	public Usuario findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Criteria criteria = getSession().createCriteria(Usuario.class);
+		criteria.add(Restrictions.eq("id",id));
+		return (Usuario) criteria.uniqueResult();
 	}
 
 	@Override
