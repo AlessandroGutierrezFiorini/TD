@@ -16,9 +16,9 @@ public interface UsuarioDAO {
 	
 	public Usuario findById(int id);
 	
-	public void disableUsuario(int id);
+	public void disableUsuario(Usuario usuario);
 
-	public void enableUsuario(int id);
+	public void enableUsuario(Usuario usuario);
 
 
 }
