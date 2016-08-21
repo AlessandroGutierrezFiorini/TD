@@ -25,10 +25,17 @@ public class LugarService {
 
 	public List<Lugar> ListAll(){return null;}
 
-	public Lugar findById(int id){return null;}
+	public Lugar findById(int id){
+		return lugarDao.findById(id);
+		}
 
 	public Lugar findByLocalidad(int id){return null;}
 
 	public Lugar findByProvincia(int id){return null;}
+
+	public List<Lugar> findAll() {
+		return lugarDao.findAll();
+		
+	}
 	
 }

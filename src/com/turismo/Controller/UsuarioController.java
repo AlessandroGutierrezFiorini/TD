@@ -32,7 +32,7 @@ public class UsuarioController {
 	
 	@RequestMapping(value = "/listar",method = RequestMethod.GET) 
 	public String showUsuarioList(Model model) {
-		model.addAttribute("usuarios",usuarioService.ListAll());
+		model.addAttribute("usuarios",usuarioService.findAll());
 		return "/usuario/listarUsuario";
 	}
 	

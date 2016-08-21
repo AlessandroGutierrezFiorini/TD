@@ -45,7 +45,7 @@ public class UsuarioDaoImpl implements UsuarioDAO{
 	}
 
 	@Override
-	public List<Usuario> ListAll() {
+	public List<Usuario> findAll() {
 		//Criteria criteria = getSession().createCriteria(Usuario.class);
 		Query query = getSession().createQuery("from Usuario");
 		return query.list();

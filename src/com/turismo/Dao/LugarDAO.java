@@ -20,4 +20,6 @@ public interface LugarDAO {
 
 	public Lugar findByProvincia(int id);
 
+	public List<Lugar> findAll();
+
 }

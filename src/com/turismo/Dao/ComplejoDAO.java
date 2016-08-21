@@ -8,17 +8,15 @@ import com.turismo.Pojo.Lugar;
 public interface ComplejoDAO {
 
 	public void save(Complejo complejo);
-	
-	public void update(Complejo complejo);
-	
-	public void delete(Complejo complejo);
-	
-	public List<Complejo> ListAll();
-	
-	public List<Complejo> ListByLugar(Lugar lugar);
-	
-	public Complejo findById(int id);
-	
 
+	public void update(Complejo complejo);
+
+	public void delete(Complejo complejo);
+
+	public List<Complejo> findAll();
+
+	public List<Complejo> ListByLugar(Lugar lugar);
+
+	public Complejo findById(int id);
 
 }
