@@ -37,9 +37,9 @@ public class UsuarioService {
 		}
 	}
 	
-	public List<Usuario> ListAll(){
+	public List<Usuario> findAll(){
 		
-		return usuarioDao.ListAll();
+		return usuarioDao.findAll();
 	}
 	
 	public Usuario findById(int id){
@@ -55,7 +55,5 @@ public class UsuarioService {
 		usuarioDao.disableUsuario(usuarioDao.findById(id));
 		
 	}
-
-	
 
 }
