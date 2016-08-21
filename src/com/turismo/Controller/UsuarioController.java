@@ -35,6 +35,29 @@ public class UsuarioController {
 		model.addAttribute("usuarios",usuarioService.ListAll());
 		return "/usuario/listarUsuario";
 	}
+	
+	@RequestMapping(value="/update/{id}",method = RequestMethod.GET)
+	public String updateUsuario(Model model, @PathVariable("id") int id){
+		Usuario usuario = usuarioService.findById(id);
+		model.addAttribute("formUsuario",usuario);
+		
+		return "/usuario/cargarUsuario";
+	}
+	
+	@RequestMapping(value="/enable/{id}",method = RequestMethod.GET)
+	public String enableUsuario(Model model, @PathVariable("id") int id){
+
+		usuarioService.enableUsuario(id);
+		return "redirect:/usuario/listar";
+	}
+	
+	@RequestMapping(value="/disable/{id}",method = RequestMethod.GET)
+	public String disableUsuario(Model model, @PathVariable("id") int id){
+		usuarioService.disableUsuario(id);
+		
+		return "redirect:/usuario/listar";
+	}
+	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String deleteUsuario(Model model,@PathVariable("id") int id){
 		Usuario usuario = usuarioService.findById(id);
