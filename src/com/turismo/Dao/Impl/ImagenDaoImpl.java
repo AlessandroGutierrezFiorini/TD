@@ -1,5 +1,8 @@
 package com.turismo.Dao.Impl;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +39,12 @@ public class ImagenDaoImpl implements ImagenDAO{
 	public void delete(Imagen imagen) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Imagen> findAll() {
+		Query query = getSession().createQuery("from Imagen");
+		return query.list();
 	}
 
 }

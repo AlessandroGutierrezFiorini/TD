@@ -17,9 +17,9 @@ public class Imagen {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String src;
+	private String categoria;
 	
-	@OneToOne
-	@JoinColumn(name="imagen")
+	@OneToOne(mappedBy="imagen")
 	private Cabana cabana;
 
 	public Imagen(){}	
@@ -48,9 +48,17 @@ public class Imagen {
 		this.cabana = cabana;
 	}
 
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
 	@Override
 	public String toString() {
-		return "Imagen [id=" + id + ", src=" + src + ", cabana=" + cabana + "]";
+		return "Imagen [id=" + id + ", src=" + src + ", categoria=" + categoria + ", cabana=" + cabana + "]";
 	}
 
 	@Override
@@ -58,6 +66,7 @@ public class Imagen {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((cabana == null) ? 0 : cabana.hashCode());
+		result = prime * result + ((categoria == null) ? 0 : categoria.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((src == null) ? 0 : src.hashCode());
 		return result;
@@ -77,6 +86,11 @@ public class Imagen {
 				return false;
 		} else if (!cabana.equals(other.cabana))
 			return false;
+		if (categoria == null) {
+			if (other.categoria != null)
+				return false;
+		} else if (!categoria.equals(other.categoria))
+			return false;
 		if (id != other.id)
 			return false;
 		if (src == null) {
@@ -86,6 +100,6 @@ public class Imagen {
 			return false;
 		return true;
 	}
+
 	
-		
 }

@@ -14,7 +14,7 @@ public interface CabanaDAO {
 	
 	public void delete(Cabana cabana);
 	
-	public List<Cabana> ListAll();
+	public List<Cabana> findAll();
 	
 	public List<Cabana> ListByComplejo(Complejo complejo);
 	

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.turismo.Dao.ImagenDAO;
-import com.turismo.Dao.UsuarioDAO;
 import com.turismo.Pojo.Imagen;
 import com.turismo.Pojo.Usuario;
 
@@ -25,17 +24,8 @@ public class ImagenService {
 		
 	}
 	
-	public List<Usuario> ListAll(){
-		return null;
+	public List<Imagen> findAll(){
+		return imagenDao.findAll();
 	}
 	
-	public Usuario findById(int id){
-		
-		return null;
-	}
-	
-	public void disableUsuario(int id){}
-
-	public void enableUsuario(int id){}
-
 }
