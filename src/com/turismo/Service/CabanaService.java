@@ -14,24 +14,24 @@ import com.turismo.Pojo.Usuario;
 public class CabanaService {
 
 	@Autowired
-	private CabanaDAO cabanadao;
+	private CabanaDAO cabanaDao;
 
 	public void saveOrUpdate(Cabana cabana) {
-		cabanadao.save(cabana);
+		cabanaDao.save(cabana);
 	}
 
 	public void delete(Cabana cabana) {
-
+		cabanaDao.delete(cabana);
 	}
 
-	public List<Usuario> ListAll() {
+	public List<Cabana> findAll() {
 
-		return null;
+		return cabanaDao.findAll();
 	}
 
-	public Usuario findById(int id) {
+	public Cabana findById(int id) {
 
-		return null;
+		return cabanaDao.findById(id);
 	}
 
 }
