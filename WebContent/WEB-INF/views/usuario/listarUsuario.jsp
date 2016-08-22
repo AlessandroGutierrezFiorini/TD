@@ -1,27 +1,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Turismo Digital</title>
-<link rel="stylesheet" type="text/css"
-	href='<c:url value="/resources/css/bootstrap.min.css"></c:url>'>
-<link rel="stylesheet" type="text/css"
-	href='<c:url value="/resources/css/estilos.css"></c:url>'>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
-</head>
-<body>
-<div class="container table-responsive">
+
+<tiles:insertDefinition name="defaultTemplate">
+	<tiles:putAttribute name="body">
 	
-	<table class="table ">
+	
+	<div class="container" style="padding-top:20px;">
+		<a href='<c:url value="/usuario/mostrar"/>' class="btn btn-success">Nuevo Usuario</a>
+	
+	
+	<div class="table-responsive" style="padding-top:20px;">
+	
+	
+	<table class="table table-condensed">
 		<thead>
-			<tr>
+			<tr class="active">
 				<td class="col-md-1">ID</td>
 				<td class="col-md-3">Email</td>
 				<td class="col-md-1">Estado</td>
@@ -36,7 +33,7 @@
 						<td class="col-md-1"><c:out value="${usuario.id}"></c:out></td>
 						<td class="col-md-3"><c:out value="${usuario.email}"></c:out></td>
 						<td class="col-md-1"><c:out value="Alta"></c:out></td>
-						<td class="col-md-1">
+						<td class="col-md-1 right-block">
 						
 						<a type="button" class="btn btn-warning" href='<c:url value="/usuario/disable/${usuario.id}" />'> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
 						<a type="button" class="btn btn-info" href='<c:url value="/usuario/update/${usuario.id}" />'> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>			
@@ -65,8 +62,7 @@
 
 	</table>
 </div>
-
-	<script type="js/jquery-1.12.1.min.js"></script>
-	<script type="js/bootstrap.min.js"></script>
-</body>
-</html>
+</div>
+	</tiles:putAttribute>
+</tiles:insertDefinition>
+	
