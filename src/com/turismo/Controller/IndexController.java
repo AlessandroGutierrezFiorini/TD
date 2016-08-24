@@ -14,4 +14,10 @@ public class IndexController {
 	public String showIndex() {
 		return "index";
 	}
+	
+	@RequestMapping(value = "/administrador") 
+	public String showMenuAdmin() {
+		return "/usuario/menuAdmin";
+	}
+	
 }
