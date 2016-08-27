@@ -17,19 +17,29 @@ public class UsuarioService {
 	
 	public void saveOrUpdate(Usuario usuario){
 		try {
-			usuarioDao.save(usuario);	
+			
+			if (usuario.getId() == 0) {
+				usuarioDao.save(usuario);	
+			} else {
+				usuarioDao.update(usuario);
+			}
 		} catch (Exception e) {
-			System.out.println("Servicio SAVE" + e.getMessage());
+			
+			System.out.println("Servicio SaveOrUpdate" + e.getMessage());
 		}
 	}
 	
 	public void delete(Usuario usuario){
-		usuarioDao.delete(usuario);
+		try {
+			usuarioDao.delete(usuario);
+		} catch (Exception e) {
+			System.out.println("Servicio Delete" + e.getMessage());
+		}
 	}
 	
-	public List<Usuario> ListAll(){
+	public List<Usuario> findAll(){
 		
-		return usuarioDao.ListAll();
+		return usuarioDao.findAll();
 	}
 	
 	public Usuario findById(int id){
@@ -37,8 +47,13 @@ public class UsuarioService {
 		return usuarioDao.findById(id);
 	}
 	
-	public void disableUsuario(int id){}
-
-	public void enableUsuario(int id){}
+	public void enableUsuario(int id){
+		usuarioDao.enableUsuario(usuarioDao.findById(id));
+	}
+	
+	public void disableUsuario(int id){
+		usuarioDao.disableUsuario(usuarioDao.findById(id));
+		
+	}
 
 }

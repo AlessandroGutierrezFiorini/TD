@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+
+	<definition name="defaultTemplate" template="/WEB-INF/views/template/default.jsp">
+		<put-attribute name="title" expression="${titulo}" />
+		<put-attribute name="description" expression="${descripcion}" />
+		<put-attribute name="menu" value="/WEB-INF/views/template/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp" />
+
+		<!-- JavaScript base -->
+		<put-list-attribute name="javascripts">
+			<add-attribute
+				value="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js" />
+			<add-attribute value="/resources/js/bootstrap.min.js" />
+			<add-attribute value="/resources/js/bootstrap-switch.min.js" />
+		</put-list-attribute>
+
+		<!-- Style base -->
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/bootstrap.min.css" />
+			<add-attribute value="/resources/css/bootstrap-theme.min.css" />
+			<add-attribute value="/resources/css/estilos.css" />
+			<add-attribute value="/resources/css/bootstrap-switch.min.css" />
+		</put-list-attribute>
+	</definition>
+
+	<definition name="presentationTemplate" template="/WEB-INF/views/template/presentation.jsp">
+		<put-attribute name="title" expression="${titulo}" />
+		<put-attribute name="description" expression="${descripcion}" />
+		<put-attribute name="body" value="" />
+		
+		<!-- JavaScript base -->
+		<put-list-attribute name="javascripts">
+			<add-attribute value="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js" />
+			<add-attribute value="/resources/js/bootstrap.min.js" />
+			<add-attribute value="/resources/js/jquery-2.2.1.js" />
+			<add-attribute value="/resources/js/jquery-1.12.1.min.js" />
+			<add-attribute value="/resources/js/jquery-ui.js" />
+		</put-list-attribute>
+
+		<!-- Style base -->
+		<put-list-attribute name="stylesheets">
+			<add-attribute value="/resources/css/bootstrap.min.css" />
+			<add-attribute value="/resources/css/bootstrap-theme.min.css" />
+			<add-attribute value="/resources/css/estilos.css" />
+		</put-list-attribute>
+	</definition>
+
+	<!-- Presentacion Index -->
+	<definition name="index" extends="presentationTemplate">
+
+		<put-list-attribute name="stylsheets" inherit="true">
+		</put-list-attribute>
+	</definition>
+
+
+
+	<!-- Formulario Usuario -->
+	<definition name="formUsuario" extends="defaultTemplate">
+
+		<put-list-attribute name="stylsheets" inherit="true"/>
+		<put-list-attribute name="javascript" inherit="true"/>
+		
+		<!-- AGREGAR VALIDAR FORMULARIOS CON JQUERY-->
+	</definition>
+	
+	<!-- Formulario Complejo -->
+	<definition name="formComplejo" extends="defaultTemplate">
+
+		<put-list-attribute name="stylsheets" inherit="true">
+		</put-list-attribute>
+		<!-- AGREGAR VALIDAR FORMULARIOS CON JQUERY-->
+	</definition>
+	
+	<!-- Formulario Cabaña -->
+	<definition name="formCabana" extends="defaultTemplate">
+		<put-list-attribute name="stylsheets" inherit="true">
+		</put-list-attribute>
+		<!-- AGREGAR VALIDAR FORMULARIOS CON JQUERY-->
+	</definition>
+	<!-- Formulario Lugar -->
+	<definition name="formLugar" extends="defaultTemplate">
+		<put-list-attribute name="stylsheets" inherit="true">
+		</put-list-attribute>
+		<!-- AGREGAR VALIDAR FORMULARIOS CON JQUERY-->
+	</definition>
+	
+</tiles-definitions>

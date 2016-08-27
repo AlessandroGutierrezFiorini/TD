@@ -30,7 +30,8 @@ public class Cabana {
 	private int estacionamiento;
 	private int churrasquera;
 	
-	@OneToOne(mappedBy="cabana")
+	@ManyToOne
+	@JoinColumn(name="id_imagen")
 	private Imagen imagen;
 	
 	@ManyToOne

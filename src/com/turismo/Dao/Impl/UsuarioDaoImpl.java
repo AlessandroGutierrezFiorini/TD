@@ -34,7 +34,7 @@ public class UsuarioDaoImpl implements UsuarioDAO{
 
 	@Override
 	public void update(Usuario usuario) {
-		getSession().delete(usuario);
+		getSession().update(usuario);
 		
 	}
 
@@ -45,7 +45,7 @@ public class UsuarioDaoImpl implements UsuarioDAO{
 	}
 
 	@Override
-	public List<Usuario> ListAll() {
+	public List<Usuario> findAll() {
 		//Criteria criteria = getSession().createCriteria(Usuario.class);
 		Query query = getSession().createQuery("from Usuario");
 		return query.list();
@@ -59,15 +59,19 @@ public class UsuarioDaoImpl implements UsuarioDAO{
 	}
 
 	@Override
-	public void disableUsuario(int id) {
-		// TODO Auto-generated method stub
+	public void enableUsuario(Usuario usuario) {
+		usuario.setEstado(1);
+		getSession().update(usuario); 
+		
+	}
+	
+	@Override
+	public void disableUsuario(Usuario usuario) {
+		usuario.setEstado(0);
+		getSession().update(usuario); 
 		
 	}
 
-	@Override
-	public void enableUsuario(int id) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }
