@@ -17,9 +17,7 @@ public class Usuario {
 	private String email;
 	private String password;
 	private int estado;
-
-	/*@OneToOne(mappedBy = "usuario")
-	public Complejo complejo;*/
+	private String rol;
 	
 	
 	public Usuario() {
@@ -58,17 +56,19 @@ public class Usuario {
 		this.estado = estado;
 	}
 
-	/*public Complejo getComplejo() {
-		return complejo;
+	
+	public String getRol() {
+		return rol;
 	}
 
-	public void setComplejo(Complejo complejo) {
-		this.complejo = complejo;
+	public void setRol(String rol) {
+		this.rol = rol;
 	}
-*/
+
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", email=" + email + ", password=" + password + ", estado=" + estado + "]";
+		return "Usuario [id=" + id + ", email=" + email + ", password=" + password + ", estado=" + estado + ", rol="
+				+ rol + "]";
 	}
 
 	@Override
@@ -79,6 +79,7 @@ public class Usuario {
 		result = prime * result + estado;
 		result = prime * result + id;
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((rol == null) ? 0 : rol.hashCode());
 		return result;
 	}
 
@@ -105,7 +106,14 @@ public class Usuario {
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
+		if (rol == null) {
+			if (other.rol != null)
+				return false;
+		} else if (!rol.equals(other.rol))
+			return false;
 		return true;
 	}
+
+	
 
 }

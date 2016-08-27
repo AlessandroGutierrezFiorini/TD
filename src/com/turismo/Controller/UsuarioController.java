@@ -67,6 +67,6 @@ public class UsuarioController {
 	public String deleteUsuario(Model model,@PathVariable("id") int id){
 		Usuario usuario = usuarioService.findById(id);
 		usuarioService.delete(usuario);
-		return "redirect:/usuario/mostrar";
+		return "redirect:/usuario/listar";
 	}
 }

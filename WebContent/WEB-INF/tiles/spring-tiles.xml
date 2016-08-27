@@ -16,6 +16,7 @@
 			<add-attribute
 				value="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js" />
 			<add-attribute value="/resources/js/bootstrap.min.js" />
+			<add-attribute value="/resources/js/bootstrap-switch.min.js" />
 		</put-list-attribute>
 
 		<!-- Style base -->
@@ -23,7 +24,7 @@
 			<add-attribute value="/resources/css/bootstrap.min.css" />
 			<add-attribute value="/resources/css/bootstrap-theme.min.css" />
 			<add-attribute value="/resources/css/estilos.css" />
-			
+			<add-attribute value="/resources/css/bootstrap-switch.min.css" />
 		</put-list-attribute>
 	</definition>
 
@@ -61,8 +62,9 @@
 	<!-- Formulario Usuario -->
 	<definition name="formUsuario" extends="defaultTemplate">
 
-		<put-list-attribute name="stylsheets" inherit="true">
-		</put-list-attribute>
+		<put-list-attribute name="stylsheets" inherit="true"/>
+		<put-list-attribute name="javascript" inherit="true"/>
+		
 		<!-- AGREGAR VALIDAR FORMULARIOS CON JQUERY-->
 	</definition>
 	

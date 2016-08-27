@@ -24,10 +24,18 @@
 					<label class="control-label" for="mail">Password</label>
 					<form:input path="password" type="text" value=""
 						class="form-control" />
-					<label class="control-label" for="mail">Estado:</label>
-					<form:input path="estado" type="text" value="" class="form-control" />
-
-					<div class="row text-center">
+					<label class="control-label" for="estado">Estado:</label>
+					<form:select path="estado" class="form-control">
+						<form:option value="1">Alta</form:option>
+						<form:option value="0">Baja</form:option>
+					</form:select> 
+					<label class="control-label" for="rol">Rol:</label>
+					
+					<form:select path="rol" class="form-control">
+						<form:option value="ROLE_ADMIN">Administrador</form:option>
+						<form:option value="ROLE_USER">Usuario</form:option>
+					</form:select> 					
+<div class="row text-center">
 						<input class="btn btn-primary form-group" type="submit"
 							value="Guardar" />
 					</div>

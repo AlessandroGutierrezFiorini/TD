@@ -16,7 +16,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href='<c:url value="/usuario/listar"/>'>Usuarios<span class="sr-only">(current)</span></a></li>
+        <li><a href='<c:url value="/usuario/listar"/>'>Usuarios<span class="sr-only">(current)</span></a></li>
         <li><a href='<c:url value="/complejo/listar"/>'>Complejos</a></li>
         <li><a href='<c:url value="/cabana/listar"/>'>Cabañas</a></li>
         <li><a href='<c:url value="/lugar/listar"/>'>Lugares</a></li>
