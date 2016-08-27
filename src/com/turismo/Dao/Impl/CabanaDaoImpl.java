@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.turismo.Dao.CabanaDAO;
 import com.turismo.Pojo.Cabana;
 import com.turismo.Pojo.Complejo;
+import com.turismo.Pojo.Imagen;
 
 @Transactional
 @Repository
@@ -30,7 +31,17 @@ public class CabanaDaoImpl implements CabanaDAO{
 	public void save(Cabana cabana) {
 		try {
 			if(cabana.getId() == 0){
-				getSession().save(cabana);	
+				if(cabana.getImagen() == null){
+					Imagen img = new Imagen();
+					img.setId(10);
+					img.setCategoria("cabana");
+					img.setSrc("path/cabana/default");
+					
+					cabana.setImagen(img);
+					getSession().save(cabana);
+				}else{
+					getSession().save(cabana);	
+				}	
 			}else{
 				getSession().update(cabana);
 			}
