@@ -1,11 +1,15 @@
 package com.turismo.Pojo;
 
+import java.util.Set;
+
 import javax.annotation.Generated;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -19,8 +23,8 @@ public class Imagen {
 	private String src;
 	private String categoria;
 	
-	@OneToOne(mappedBy="imagen")
-	private Cabana cabana;
+	@OneToMany(fetch = FetchType.EAGER,mappedBy="imagen")
+	private Set<Cabana> cabana;
 
 	public Imagen(){}	
 	
@@ -40,11 +44,11 @@ public class Imagen {
 		this.src = src;
 	}
 
-	public Cabana getCabana() {
+	public Set<Cabana> getCabana() {
 		return cabana;
 	}
 
-	public void setCabana(Cabana cabana) {
+	public void setCabana(Set<Cabana> cabana) {
 		this.cabana = cabana;
 	}
 

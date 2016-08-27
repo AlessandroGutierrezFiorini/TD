@@ -30,7 +30,7 @@ public class Cabana {
 	private int estacionamiento;
 	private int churrasquera;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name="id_imagen")
 	private Imagen imagen;
 	

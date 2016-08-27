@@ -51,11 +51,11 @@
 					<label class="control-label" for="mail">churrasquera</label>
 					<form:input path="churrasquera" type="text" value=""
 						class="form-control" />
-					<label class="control-label" for="usuario">Imagen:</label>
+ 					<label class="control-label" for="usuario">Imagen:</label> 
 
-					<form:select cssClass="form-control" path="imagen.id"
-						items="${imagenes}" var="imagen" itemLabel="src" itemValue="id"
-						id="imagen" />
+<%-- 					<form:select cssClass="form-control" path="imagen.id"  --%>
+<%--  						items="${imagenes}" var="imagen" itemLabel="src" itemValue="id"  --%>
+<%--  						id="imagen" />  --%>
 					<label class="control-label" for="usuario">Complejo:</label>
 
 					<form:select cssClass="form-control" path="complejo.id"
