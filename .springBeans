@@ -10,6 +10,7 @@
 		<config>WebContent/WEB-INF/dispatcher-servlet.xml</config>
 		<config>src/com/turismo/Config/persistence-context.xml</config>
 		<config>src/com/turismo/Config/service-context.xml</config>
+		<config>src/com/turismo/Config/image-context.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

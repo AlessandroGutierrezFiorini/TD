@@ -17,4 +17,9 @@ public class IndexController {
 		return "/usuario/menuAdmin";
 	}
 	
+	@RequestMapping(value = "/imagenUp") 
+	public String showMenuImage() {
+		return "/fileUpload";
+	}
+	
 }
