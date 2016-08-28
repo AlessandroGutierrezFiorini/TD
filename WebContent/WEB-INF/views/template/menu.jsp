@@ -19,7 +19,7 @@
         <li><a href='<c:url value="/usuario/listar"/>'>Usuarios<span class="sr-only">(current)</span></a></li>
         <li><a href='<c:url value="/complejo/listar"/>'>Complejos</a></li>
         <li><a href='<c:url value="/cabana/listar"/>'>Cabañas</a></li>
-        <li><a href='<c:url value="/lugar/listar"/>'>Lugares</a></li>
+        <li><a href='<c:url value="/lugar/listar1"/>'>Lugares</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

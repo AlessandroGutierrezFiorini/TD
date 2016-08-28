@@ -25,20 +25,17 @@ public class ImagenDaoImpl implements ImagenDAO{
 	
 	@Override
 	public void save(Imagen imagen) {
-	//	getSession().save(imagen);
-		
+		getSession().save(imagen);
 	}
 
 	@Override
 	public void update(Imagen imagen) {
-		// TODO Auto-generated method stub
-		
+		getSession().update(imagen);		
 	}
 
 	@Override
 	public void delete(Imagen imagen) {
-		// TODO Auto-generated method stub
-		
+		getSession().delete(imagen);
 	}
 
 	@Override

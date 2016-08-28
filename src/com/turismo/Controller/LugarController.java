@@ -19,9 +19,10 @@ public class LugarController {
 	@Autowired
 	private LugarService lugarService;
 	
-	@RequestMapping(value="/listar")
+	@RequestMapping(value="/listar", method = RequestMethod.GET)
 	public String listarLugar(Model model, @ModelAttribute("resultado") String resultado){
 		model.addAttribute("lugares",lugarService.findAll());
+		
 		return "/lugar/listarLugar";
 	}
 	
@@ -56,5 +57,12 @@ public class LugarController {
 		
 		return "redirect:/lugar/listar";
 	}
-
+	
+	/************************************************************************/
+	
+	@RequestMapping(value="/listar")
+	public String listarLugares(Model model, @ModelAttribute("resultado") String resultado){
+		model.addAttribute("lugares",lugarService.findAll());
+		return "/lugar/listarLugar";
+	}
 }

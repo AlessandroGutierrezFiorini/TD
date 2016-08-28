@@ -28,6 +28,7 @@
     <param-value>
   			classpath:/com/turismo/Config/persistence-context.xml
   			classpath:/com/turismo/Config/service-context.xml
+  			classpath:/com/turismo/Config/image-context.xml
   		</param-value>
   </context-param>
   <resource-ref>

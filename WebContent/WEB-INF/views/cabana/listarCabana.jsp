@@ -56,17 +56,15 @@
 								<td class="col-md-1"><c:out value="${cabana.television}"></c:out></td>
 								<td class="col-md-1"><c:out value="${cabana.cocina}"></c:out></td>
 								<td class="col-md-1"><c:out value="${cabana.mascotas}"></c:out></td>
-								<td class="col-md-1"><c:out
-										value="${cabana.estacionamiento}"></c:out></td>
+								<td class="col-md-1"><c:out value="${cabana.estacionamiento}"></c:out></td>
 								<td class="col-md-1"><c:out value="${cabana.churrasquera}"></c:out></td>
-								<td class="col-md-1"><c:out value="${cabana.imagen.src}"></c:out></td>
-								<td class="col-md-1"><c:out
-										value="${cabana.complejo.nombre}"></c:out></td>
-								<td class="col-md-1"><a type="button" class="btn btn-info"
-									href='<c:url value="/cabana/update/${cabana.id}" />'> <span
+								<td class="col-md-1"><c:out value="${cabana.complejo.nombre}"></c:out></td>
+								<td class="col-md-1">
+								<a type="button" class="btn btn-primary" href='<c:url value="/image/cabana/${cabana.id}" />'> 
+									<span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a> 
+								<a type="button" class="btn btn-info" href='<c:url value="/cabana/update/${cabana.id}" />'> <span
 										class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-									<a type="button" class="btn btn-danger"
-									href='<c:url value="/cabana/delete/${cabana.id}" />'> <span
+									<a type="button" class="btn btn-danger" href='<c:url value="/cabana/delete/${cabana.id}" />'> <span
 										class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
 
 
