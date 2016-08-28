@@ -48,8 +48,10 @@
 								<td class="col-md-1"><c:out value="${lugar.distancia}"></c:out></td>
 
 
-								<td class="col-md-2"><a type="button"
-									class="btn btn-warning" href='<c:url value="/lugar/listar" />'>
+								<td class="col-md-2">
+								<a type="button" class="btn btn-primary" href='<c:url value="/image/lugar/${lugar.id}" />'> 
+							<span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a> 
+								<a type="button" class="btn btn-warning" href='<c:url value="/lugar/listar" />'>
 										<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 								</a> <a type="button" class="btn btn-info"
 									href='<c:url value="/lugar/update/${lugar.id}" />'> <span

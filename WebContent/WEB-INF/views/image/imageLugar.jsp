@@ -8,19 +8,20 @@
 <tiles:insertDefinition name="formUsuario">
 	<tiles:putAttribute name="body">
 		<c:out value="${message}"/>
-<form:form method="POST" action="/imagen/cargar" enctype="multipart/form-data" commandName="fileFormBean">
+<form method="POST" action="${pageContext.request.contextPath}/image/lugarUpload" enctype="multipart/form-data">
     <table>
         <tr>
+        
+           <td><input id="id_lugar" type="text" name="id_lugar" value='<c:out value="${lugar.id}"/>'/></td>
            <td>Selecciona fichero: </td>
-           <td><input type="file" name="file" /></td>
+           <td><input id="file" type="file" name="file" value=""/></td>
         </tr>
         <tr>
-    
         </tr>
         <tr><td colspan="2" align="center">
     	<input type="submit" value="Subir fichero"></td>
         </tr>
      </table>
-</form:form>
+</form>
 	</tiles:putAttribute>
 </tiles:insertDefinition>

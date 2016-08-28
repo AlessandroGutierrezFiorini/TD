@@ -1,5 +1,6 @@
 package com.turismo.Pojo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,6 +30,8 @@ public class Cabana {
 	private int mascotas;
 	private int estacionamiento;
 	private int churrasquera;
+	@Column(name="imagen")
+	private String image;
 	
 	@ManyToOne
 	@JoinColumn(name="id_imagen")
@@ -139,6 +142,14 @@ public class Cabana {
 
 	public void setComplejo(Complejo complejo) {
 		this.complejo = complejo;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	@Override

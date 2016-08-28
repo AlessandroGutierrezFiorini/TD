@@ -24,7 +24,7 @@
 						<td class="col-md-2">Email</td>
 						<td class="col-md-1">Latitud</td>
 						<td class="col-md-1">Longitud</td>
-						<td class="col-md-2">Acciones</td>
+						<td class="col-md-3">Acciones</td>
 					</tr>
 				</thead>
 				<tbody class="block-center">
@@ -39,7 +39,9 @@
 							<td class="col-md-1"><c:out value="${complejo.latitud}"></c:out></td>
 							<td class="col-md-1"><c:out value="${complejo.longitud}"></c:out></td>
 
-							<td class="col-md-2">
+							<td class="col-md-3">
+							<a type="button" class="btn btn-primary" href='<c:url value="/image/complejo/${complejo.id}" />'> 
+							<span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a> 
 							<a type="button" class="btn btn-warning" href='<c:url value="/cabana/listar" />'> 
 							<span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> 
 							<a type="button" class="btn btn-info" href='<c:url value="/complejo/update/${complejo.id}" />'> 

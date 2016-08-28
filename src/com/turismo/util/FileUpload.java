@@ -2,7 +2,7 @@ package com.turismo.util;
 
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-public class FileFormBean {
+public class FileUpload {
 
 	CommonsMultipartFile file;
 
