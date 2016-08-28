@@ -12,7 +12,7 @@ public interface LugarDAO {
 
 	public void delete(Lugar lugar);
 
-	public List<Lugar> ListAll();
+	public List<Lugar> ListAllPage(int page);
 
 	public Lugar findById(int id);
 
