@@ -6,36 +6,51 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.turismo.Dao.LugarDAO;
-import com.turismo.Dao.UsuarioDAO;
 import com.turismo.Pojo.Lugar;
-import com.turismo.Pojo.Usuario;
 
 @Service
 public class LugarService {
 
 	@Autowired
 	private LugarDAO lugarDao;
-	
-	
-	public void saveOrUpdate(Lugar lugar){
-		lugarDao.save(lugar);
-	}
-	
-	public void delete(Lugar lugar){}
 
-	public List<Lugar> ListAll(){return null;}
+	public void saveOrUpdate(Lugar lugar) {
+		try {
+			if (lugar.getId() == 0) {
+				lugarDao.save(lugar);
+			} else {
+				lugarDao.update(lugar);
+			}
 
-	public Lugar findById(int id){
-		return lugarDao.findById(id);
+		} catch (Exception e) {
+			System.out.println("Servicio SaveOrUpdate" + e.getMessage());
 		}
 
-	public Lugar findByLocalidad(int id){return null;}
+	}
 
-	public Lugar findByProvincia(int id){return null;}
+	public void delete(Lugar lugar) {
+		lugarDao.delete(lugar);
+	}
+
+	public List<Lugar> ListAll() {
+		return null;
+	}
+
+	public Lugar findById(int id) {
+		return lugarDao.findById(id);
+	}
+
+	public Lugar findByLocalidad(int id) {
+		return null;
+	}
+
+	public Lugar findByProvincia(int id) {
+		return null;
+	}
 
 	public List<Lugar> findAll() {
 		return lugarDao.findAll();
-		
+
 	}
-	
+
 }

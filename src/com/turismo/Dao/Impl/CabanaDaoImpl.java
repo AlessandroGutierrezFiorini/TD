@@ -29,32 +29,12 @@ public class CabanaDaoImpl implements CabanaDAO{
 	
 	@Override
 	public void save(Cabana cabana) {
-		try {
-			if(cabana.getId() == 0){
-				if(cabana.getImagen() == null){
-					Imagen img = new Imagen();
-					img.setId(10);
-					img.setCategoria("cabana");
-					img.setSrc("path/cabana/default");
-					
-					cabana.setImagen(img);
-					getSession().save(cabana);
-				}else{
-					getSession().save(cabana);	
-				}	
-			}else{
-				getSession().update(cabana);
-			}
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		getSession().save(cabana);
 	}
 
 	@Override
 	public void update(Cabana cabana) {
-		// TODO Auto-generated method stub
+		getSession().update(cabana);
 		
 	}
 

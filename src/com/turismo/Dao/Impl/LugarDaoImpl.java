@@ -33,10 +33,12 @@ public class LugarDaoImpl implements LugarDAO {
 
 	@Override
 	public void update(Lugar lugar) {
+		getSession().update(lugar);
 	}
 
 	@Override
 	public void delete(Lugar lugar) {
+		getSession().delete(lugar);
 	}
 
 	@Override
