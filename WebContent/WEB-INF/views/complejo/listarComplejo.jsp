@@ -17,7 +17,6 @@
 	<table class="table table-condensed">
 				<thead>
 					<tr class="active">
-<!-- 						<td class="col-md-1">ID</td> -->
 						<td class="col-md-2">Nombre</td>
 						<td class="col-md-1">Direccion</td>
 						<td class="col-md-1">Telefono</td>
@@ -32,7 +31,6 @@
 					<c:forEach items="${complejos}" var="complejo">
 
 						<tr class="success">
-<%-- 						<td class="col-md-1"><c:out value="${complejo.id}"></c:out></td> --%>
 							<td class="col-md-2"><c:out value="${complejo.nombre}"></c:out></td>
 							<td class="col-md-1"><c:out value="${complejo.direccion}"></c:out></td>
 							<td class="col-md-1"><c:out value="${complejo.telefono}"></c:out></td>

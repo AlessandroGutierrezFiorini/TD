@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.turismo.Pojo.Complejo;
-import com.turismo.Pojo.Usuario;
 import com.turismo.Service.ComplejoService;
 import com.turismo.Service.LugarService;
 import com.turismo.Service.UsuarioService;
