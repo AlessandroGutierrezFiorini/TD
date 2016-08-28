@@ -24,6 +24,7 @@ public class Complejo {
 	private String telefono;
 	private String movil;
 	private String email;
+	private String imagen;
 //	private String localidad;
 //	private String provincia;
 	private String latitud;
@@ -146,94 +147,111 @@ public class Complejo {
 	public void setCabana(Set<Cabana> cabana) {
 		this.cabana = cabana;
 	}
-//
-//	@Override
-//	public String toString() {
-//		return "Complejo [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono
-//				+ ", movil=" + movil + ", email=" + email + ", localidad=" + localidad + ", provincia=" + provincia
-//				+ ", latidud=" + latitud + ", longitud=" + longitud + ", usuario=" + usuario + "]";
-//	}
-//
-//	@Override
-//	public int hashCode() {
-//		final int prime = 31;
-//		int result = 1;
-//		result = prime * result + ((direccion == null) ? 0 : direccion.hashCode());
-//		result = prime * result + ((email == null) ? 0 : email.hashCode());
-//		result = prime * result + id;
-//		result = prime * result + ((latitud == null) ? 0 : latitud.hashCode());
-//		result = prime * result + ((localidad == null) ? 0 : localidad.hashCode());
-//		result = prime * result + ((longitud == null) ? 0 : longitud.hashCode());
-//		result = prime * result + ((movil == null) ? 0 : movil.hashCode());
-//		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-//		result = prime * result + ((provincia == null) ? 0 : provincia.hashCode());
-//		result = prime * result + ((telefono == null) ? 0 : telefono.hashCode());
-//		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
-//		return result;
-//	}
-//
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		Complejo other = (Complejo) obj;
-//		if (direccion == null) {
-//			if (other.direccion != null)
-//				return false;
-//		} else if (!direccion.equals(other.direccion))
-//			return false;
-//		if (email == null) {
-//			if (other.email != null)
-//				return false;
-//		} else if (!email.equals(other.email))
-//			return false;
-//		if (id != other.id)
-//			return false;
-//		if (latitud == null) {
-//			if (other.latitud != null)
-//				return false;
-//		} else if (!latitud.equals(other.latitud))
-//			return false;
-//		if (localidad == null) {
-//			if (other.localidad != null)
-//				return false;
-//		} else if (!localidad.equals(other.localidad))
-//			return false;
-//		if (longitud == null) {
-//			if (other.longitud != null)
-//				return false;
-//		} else if (!longitud.equals(other.longitud))
-//			return false;
-//		if (movil == null) {
-//			if (other.movil != null)
-//				return false;
-//		} else if (!movil.equals(other.movil))
-//			return false;
-//		if (nombre == null) {
-//			if (other.nombre != null)
-//				return false;
-//		} else if (!nombre.equals(other.nombre))
-//			return false;
-//		if (provincia == null) {
-//			if (other.provincia != null)
-//				return false;
-//		} else if (!provincia.equals(other.provincia))
-//			return false;
-//		if (telefono == null) {
-//			if (other.telefono != null)
-//				return false;
-//		} else if (!telefono.equals(other.telefono))
-//			return false;
-//		if (usuario == null) {
-//			if (other.usuario != null)
-//				return false;
-//		} else if (!usuario.equals(other.usuario))
-//			return false;
-//		return true;
-//	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cabana == null) ? 0 : cabana.hashCode());
+		result = prime * result + ((direccion == null) ? 0 : direccion.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((imagen == null) ? 0 : imagen.hashCode());
+		result = prime * result + ((latitud == null) ? 0 : latitud.hashCode());
+		result = prime * result + ((longitud == null) ? 0 : longitud.hashCode());
+		result = prime * result + ((lugar == null) ? 0 : lugar.hashCode());
+		result = prime * result + ((movil == null) ? 0 : movil.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + ((telefono == null) ? 0 : telefono.hashCode());
+		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Complejo other = (Complejo) obj;
+		if (cabana == null) {
+			if (other.cabana != null)
+				return false;
+		} else if (!cabana.equals(other.cabana))
+			return false;
+		if (direccion == null) {
+			if (other.direccion != null)
+				return false;
+		} else if (!direccion.equals(other.direccion))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (id != other.id)
+			return false;
+		if (imagen == null) {
+			if (other.imagen != null)
+				return false;
+		} else if (!imagen.equals(other.imagen))
+			return false;
+		if (latitud == null) {
+			if (other.latitud != null)
+				return false;
+		} else if (!latitud.equals(other.latitud))
+			return false;
+		if (longitud == null) {
+			if (other.longitud != null)
+				return false;
+		} else if (!longitud.equals(other.longitud))
+			return false;
+		if (lugar == null) {
+			if (other.lugar != null)
+				return false;
+		} else if (!lugar.equals(other.lugar))
+			return false;
+		if (movil == null) {
+			if (other.movil != null)
+				return false;
+		} else if (!movil.equals(other.movil))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		if (telefono == null) {
+			if (other.telefono != null)
+				return false;
+		} else if (!telefono.equals(other.telefono))
+			return false;
+		if (usuario == null) {
+			if (other.usuario != null)
+				return false;
+		} else if (!usuario.equals(other.usuario))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Complejo [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono
+				+ ", movil=" + movil + ", email=" + email + ", imagen=" + imagen + ", latitud=" + latitud
+				+ ", longitud=" + longitud + ", usuario=" + usuario + ", lugar=" + lugar + ", cabana=" + cabana + "]";
+	}
+	
+	
+	
 
 }
