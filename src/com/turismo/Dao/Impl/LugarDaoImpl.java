@@ -19,6 +19,8 @@ import com.turismo.Pojo.Usuario;
 @Repository
 public class LugarDaoImpl implements LugarDAO {
 
+	private static final int LIMITE_RESULTADOS = 3;
+
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -42,8 +44,12 @@ public class LugarDaoImpl implements LugarDAO {
 	}
 
 	@Override
-	public List<Lugar> ListAll() {
-		return null;
+	public List<Lugar> ListAllPage(int page) {
+		Query q = getSession().createQuery("from Lugar");
+
+		q.setFirstResult((page * LIMITE_RESULTADOS) - LIMITE_RESULTADOS);
+		q.setMaxResults(LIMITE_RESULTADOS);
+		return q.list();
 	}
 
 	@Override

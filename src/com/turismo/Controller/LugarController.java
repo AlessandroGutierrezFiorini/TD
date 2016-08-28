@@ -1,5 +1,7 @@
 package com.turismo.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.turismo.Pojo.Lugar;
@@ -19,9 +22,19 @@ public class LugarController {
 	@Autowired
 	private LugarService lugarService;
 	
-	@RequestMapping(value="/listar")
-	public String listarLugar(Model model, @ModelAttribute("resultado") String resultado){
-		model.addAttribute("lugares",lugarService.findAll());
+	@RequestMapping(value="/listar",method = RequestMethod.GET)
+	public String listarLugar(@RequestParam(value = "page", required = false) int page, Model model, @ModelAttribute("resultado") String resultado){
+		
+		
+		int startpage = (int) (page - 5 > 0?page - 5:1);
+	    int endpage = startpage + 10;
+	    List<Lugar> lugares = lugarService.ListAllPage(page);
+	    lugares.toString();
+	    model.addAttribute("lugares",lugares);
+	    //model.addAttribute("employees", this.employeeService.getEmployees(page));
+
+	    model.addAttribute("startpage",startpage);
+	    model.addAttribute("endpage",endpage);
 		return "/lugar/listarLugar";
 	}
 	

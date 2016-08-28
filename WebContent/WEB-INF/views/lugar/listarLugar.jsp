@@ -66,6 +66,16 @@
 					</tbody>
 
 				</table>
+
+				<div class="pagination">
+					<ul>
+						<li><c:forEach begin="${startpage}" end="${endpage}" var="p">
+								<a
+									href="<c:url value="/lugar/listar" ><c:param name="page" value="${p}"/>${p}</c:url>">${p}</a>
+							</c:forEach></li>
+					</ul>
+				</div>
+				
 			</div>
 		</div>
 	</tiles:putAttribute>

@@ -32,8 +32,8 @@ public class LugarService {
 		lugarDao.delete(lugar);
 	}
 
-	public List<Lugar> ListAll() {
-		return null;
+	public List<Lugar> ListAllPage(int page) {
+		return lugarDao.ListAllPage(page);
 	}
 
 	public Lugar findById(int id) {
