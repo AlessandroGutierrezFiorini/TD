@@ -35,6 +35,7 @@ public class LugarController {
 
 	    model.addAttribute("startpage",startpage);
 	    model.addAttribute("endpage",endpage);
+
 		return "/lugar/listarLugar";
 	}
 	
@@ -69,5 +70,12 @@ public class LugarController {
 		
 		return "redirect:/lugar/listar";
 	}
-
+	
+	/************************************************************************/
+	
+	@RequestMapping(value="/listar")
+	public String listarLugares(Model model, @ModelAttribute("resultado") String resultado){
+		model.addAttribute("lugares",lugarService.findAll());
+		return "/lugar/listarLugar";
+	}
 }

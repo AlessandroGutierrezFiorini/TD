@@ -11,7 +11,7 @@
 		<div class="row ">
 	
 	<div class="container-left col-md-6"> 
-		<a href="ListarCabanias.html" class="btn btn-primary btn-lg sharp btn-izq">Lugares</a>		
+		<a href="${pageContext.request.contextPath}/lugares" class="btn btn-primary btn-lg sharp btn-izq">Lugares</a>		
 	</div>
 	
 
