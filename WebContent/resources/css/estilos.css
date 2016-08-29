@@ -8,7 +8,7 @@
 	width: 100%;
 	height: auto;
 	background-color: #7df481;
-  border-color: #080808;
+  	border-color: #080808;
 }
 
 .header-background{
@@ -19,7 +19,7 @@
 .post {
 	margin-bottom: 5px;
 	padding-bottom: 5px;
-	border-bottom: 1px solid #9c9c9c;
+	/*sborder-bottom: 1px solid #9c9c9c; */
 }
 
 .post .post-title a{
@@ -34,8 +34,8 @@
 }
 
 .post .thumb img{
-	width: 100%;
-	height: auto;
+	width: 200px;
+	height: 200px;
 	/*padding-left: 10px;*/
 }
 .post .contenedor-botones{
