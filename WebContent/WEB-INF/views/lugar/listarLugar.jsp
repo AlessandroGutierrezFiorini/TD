@@ -5,7 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
@@ -67,15 +67,45 @@
 
 				</table>
 
-				<div class="pagination">
-					<ul>
-						<li><c:forEach begin="${startpage}" end="${endpage}" var="p">
-								<a
-									href="<c:url value="/lugar/listar" ><c:param name="page" value="${p}"/>${p}</c:url>">${p}</a>
-							</c:forEach></li>
-					</ul>
-				</div>
-				
+
+
+				<nav  class="page pagination center-block" aria-label="..."	>
+					<div class="center-block">
+					
+						<ul class="pagination pagination-lg ">
+							<c:if test="${page <= 1}">
+							<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+							</c:if>
+							
+							<c:if test="${page > 1}">
+							<li class="previous"><a href="<c:url value="/lugar/listar"><c:param name="page" value="${page-1}"/></c:url>"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+							</c:if>
+							
+							
+							<li>
+							<c:forEach begin="${startpage}" end="${endpage}" var="p">
+								<a href="<c:url value="/lugar/listar" ><c:param name="page" value="${p}"/>${p}</c:url>">${p}</a>					
+							</c:forEach>
+						</li>
+
+							<c:if test="${fn:length(lugares) < 5}">
+								<li class="next disabled">
+								<a href="#">Siguiente <span aria-hidden="true">&rarr;</span>
+								</a></li>
+
+							</c:if>
+							
+							<c:if test="${fn:length(lugares) gt 4}">
+								<li class="next"><a
+									href="<c:url value="/lugar/listar"><c:param name="page" value="${page+1}"/></c:url>">Siguiente
+										<span aria-hidden="true">&rarr;</span>
+								</a></li>
+							</c:if>
+
+						</ul>
+					</div>
+				</nav>
+			
 			</div>
 		</div>
 	</tiles:putAttribute>

@@ -23,19 +23,22 @@ public class LugarController {
 	private LugarService lugarService;
 	
 	@RequestMapping(value="/listar",method = RequestMethod.GET)
-	public String listarLugar(@RequestParam(value = "page", required = false) int page, Model model, @ModelAttribute("resultado") String resultado){
+	public String listarLugar(@RequestParam(value = "page", defaultValue="0",required=false) int page, Model model, @ModelAttribute("resultado") String resultado){
 		
-		
+		List<Lugar> lugares = lugarService.ListAllPage(page);
+		int numList = lugares.size()/5;
+				
 		int startpage = (int) (page - 5 > 0?page - 5:1);
-	    int endpage = startpage + 10;
-	    List<Lugar> lugares = lugarService.ListAllPage(page);
-	    lugares.toString();
+		int endpage = startpage + numList;
+	   // lugares.toString();
 	    model.addAttribute("lugares",lugares);
 	    //model.addAttribute("employees", this.employeeService.getEmployees(page));
 
 	    model.addAttribute("startpage",startpage);
 	    model.addAttribute("endpage",endpage);
+	    model.addAttribute("page",page);
 
+	    
 		return "/lugar/listarLugar";
 	}
 	

@@ -5,7 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <tiles:insertDefinition name="turismoTemplate">
 	<tiles:putAttribute name="body">
@@ -45,8 +45,51 @@
 					</div>
 				</div>
 				</c:forEach>
-				
-		</div>
+
+
+			<div class="center-block">
+				<nav class="page pagination center-block" aria-label="...">
+					<div class="center-block">
+
+						<ul class="pagination pagination-lg ">
+							<c:if test="${page <= 1}">
+								<li class="previous disabled"><a href="#"><span
+										aria-hidden="true">&larr;</span> Anterior</a></li>
+							</c:if>
+
+							<c:if test="${page > 1}">
+								<li class="previous"><a
+									href="<c:url value="/lugares"><c:param name="page" value="${page-1}"/></c:url>"><span
+										aria-hidden="true">&larr;</span> Anterior</a></li>
+							</c:if>
+							
+								<c:forEach begin="${startpage}" end="${endpage}" var="p">
+							
+								<li>
+									<a href="<c:url value="/lugares"><c:param name="page" value="${p}"/>${p}</c:url>">${p}</a>
+							</li>
+							
+								</c:forEach>
+							
+							<c:if test="${fn:length(lugares) < 5}">
+								<li class="next disabled"><a href="#">Siguiente <span
+										aria-hidden="true">&rarr;</span>
+								</a></li>
+
+							</c:if>
+
+							<c:if test="${fn:length(lugares) gt 4}">
+								<li class="next"><a
+									href="<c:url value="/lugares"><c:param name="page" value="${page+1}"/></c:url>">Siguiente
+										<span aria-hidden="true">&rarr;</span>
+								</a></li>
+							</c:if>
+
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>	
 				
 				</tiles:putAttribute>
 </tiles:insertDefinition>
