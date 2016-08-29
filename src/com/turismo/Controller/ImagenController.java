@@ -33,8 +33,8 @@ import com.turismo.util.FileUpload;
 @RequestMapping("/image")
 public class ImagenController {
 
-	final static String local = "C:\\Users\\Alessandro\\Documents\\workspace-sts-3.8.1.RELEASE\\TurismoDigital";
-	// final static String local = "C:\\Users\\ASUS\\Documents\\TurismoDigital";
+	//final static String local = "C:\\Users\\Alessandro\\Documents\\workspace-sts-3.8.1.RELEASE\\TurismoDigital";
+	 final static String local = "C:\\Users\\ASUS\\Documents\\TurismoDigital";
 	@Autowired
 	private ImagenService imagenService;
 
